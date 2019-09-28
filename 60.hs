@@ -1,6 +1,10 @@
 -- RESULTS:
+-- If we consider the list of primes below 20,000
 -- For the set of 5 primes, this code generates the first candidate in ~1 min, and
 -- the second (which is the smallest) candidate in ~2.5 minutes.
+-- 
+-- If we consider the list of primes below 10,000
+-- The first set of primes is generated in ~22 secs, which is also the smallest set
 -- Tested on a 2.9 GHz Intel core i5 with 8GB RAM
 
 
@@ -55,4 +59,4 @@ ans chain (x:primes) originalList
 
 finalAns = ans [] ps ps
         where
-            ps = primesBelow 20000
+            ps = primesBelow 10000
