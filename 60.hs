@@ -1,3 +1,9 @@
+-- RESULTS:
+-- For the set of 5 primes, this code generates the first candidate in ~1 min, and
+-- the second (which is the smallest) candidate in ~2.5 minutes.
+-- Tested on a 2.9 GHz Intel core i5 with 8GB RAM
+
+
 -- Optimized isPrime from https://stackoverflow.com/a/4572515/493321
 primes :: [Int]
 primes = sieve (2 : 3 : possible [1..]) where
@@ -11,7 +17,6 @@ isPrime n = shortCircuit || (not $ any divisible $ takeWhile inRangeOf primes) w
     inRangeOf y = y * y <= n
 -- End
 
--- Generates the list of primes less than a
 primesBelow :: Int -> [Int]
 primesBelow a = filter isPrime [2..a]
 
